@@ -22,3 +22,24 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Use flexbox for horizontal alignment */
+  justify-content: center; /* Center the list items horizontally */
+}
+
+.nav li {
+  margin-right: 20px; /* Space between the items */
+}
+
+.nav li:last-child {
+  margin-right: 0;
+}
+
+.nav .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
