@@ -7,16 +7,15 @@ function Recipes() {
         fetch("http://localhost:3000/api/v1/recipes")
             .then((response) => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error(`HTTP error! Status: ${response.status}`);
                 }
-                response.json();
+                return response.json();
             })
             .then((data) => {
+                console.log("Fetched Data:", data);
                 setRecipes(data);
             })
-            .catch((error) => {
-                console.log("There was a problem with the fetch operation:", error.message);
-            })
+            .catch((error) => console.log("Fetch error:", error));
     }, []);
 
     return (
