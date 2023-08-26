@@ -23,9 +23,7 @@ function Recipes() {
             <h1>All Recipes</h1>
             {recipes.map((recipe) => (
                 <div key={recipe.id} className="recipe-container">
-                    <h2>{recipe.title}</h2>
-                    <p>{recipe.description}</p>
-                    <a href={recipe.link}>View Recipe</a>
+                    <a href={recipe.link}>{recipe.title}</a>
                 </div>
             ))}
         </div>
