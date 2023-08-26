@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home'
 import Navbar from './components/Navbar'
+import Recipes from './components/Recipes'
 
 class App extends Component {
   render() {
@@ -12,9 +13,9 @@ class App extends Component {
           <div className="App-header">
             <Navbar />
               <Routes>
-                  <Route exact path="/" component={Home} />
+                  <Route exact path="/" element={Home} />
               </Routes>
-            <Home />
+            <Recipes />
           </div>
         </div>
       </Router>
