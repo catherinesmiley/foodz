@@ -4,9 +4,19 @@ function Recipes() {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
-        fetch("/api/v1/recipes")
-            .then((response) => response.json())
-            .then((data) => setRecipes(data));
+        fetch("http://localhost:3000/api/v1/recipes")
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                response.json();
+            })
+            .then((data) => {
+                setRecipes(data);
+            })
+            .catch((error) => {
+                console.log("There was a problem with the fetch operation:", error.message);
+            })
     }, []);
 
     return (
