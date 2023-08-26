@@ -13,9 +13,9 @@ class App extends Component {
           <div className="App-header">
             <Navbar />
               <Routes>
-                  <Route exact path="/" element={Home} />
+                  <Route exact path="/" element={<Home />} />
+                  <Route path="/recipes" element={<Recipes />} />
               </Routes>
-            <Recipes />
           </div>
         </div>
       </Router>
